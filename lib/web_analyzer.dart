@@ -312,7 +312,7 @@ class WebAnalyzer {
 
   static String _getMetaContent(
       Document document, String property, String propertyValue) {
-    final meta = document.head.getElementsByTagName("meta");
+    final meta = document.getElementsByTagName("meta");
     final ele = meta.firstWhere((e) => e.attributes[property] == propertyValue,
         orElse: () => null);
     if (ele != null) return ele.attributes["content"]?.trim();
